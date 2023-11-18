@@ -1,12 +1,15 @@
-const express = require('express');
-const dotenv = require('dotenv');
+const express = require("express");
+const dotenv = require("dotenv");
+const connectToDB = require("./migrations/dbConnector");
+const app = express();
 
 dotenv.config();
 
-const app = express();
+// connect to database...
+connectToDB();
 
-const port = process.env.PORT || 8900
+const port = process.env.PORT || 8900;
 
-app.listen(port,() => {
-    console.log('server started...');
+app.listen(port, () => {
+  console.log("server started...");
 });
