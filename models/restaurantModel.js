@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("./../migrations/db");
 
-const Restaurant = sequelize.define("Restaurant", {
+const Restaurant = sequelize.define("restaurant", {
   name: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -12,12 +12,7 @@ const Restaurant = sequelize.define("Restaurant", {
   contact: {
     type: DataTypes.STRING,
   },
-  openingHours: {
-    type: DataTypes.STRING,
-  },
-  rating: {
-    type: DataTypes.FLOAT,
-  },
 });
+
 
 module.exports = Restaurant;
