@@ -9,4 +9,7 @@ router.post("/add-restaurant", crudController.CREATE);
 // get all restaurant list
 router.get("/get-restaurants", crudController.GETAll);
 
-module.exports = router;
+// update a restaurant details
+router.put("/update-restaurant/:id", crudController.UPDATE);
+
+module.exports = router; 

@@ -32,7 +32,7 @@ const crudController = {
   // handle req-res of read operation
   GETAll: (req, res) => {
     repository
-      .getRestaurant()
+      .getRestaurants()
       .then((result) => {
         res.status(200).json({
           status: "success",
@@ -44,6 +44,27 @@ const crudController = {
         res.status(500).json({
           status: "fail",
           message: " Server error in fetching restaurants.",
+        });
+      });
+  },
+
+  // handle req-res of update operation
+  UPDATE: (req, res) => {
+    const restaurantId = req.params.id;
+    const updatedRestaurantData = req.body;
+
+    repository
+      .UpdateRestaurant(updatedRestaurantData, restaurantId)
+      .then((result) => {
+        res.status(200).json({
+          status: "success",
+          message: "restaurant details update successfully",
+        });
+      })
+      .catch((err) => {
+        res.status(404).json({
+          status: "fail",
+          message: "something went wrong in update",
         });
       });
   },
