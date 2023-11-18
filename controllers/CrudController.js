@@ -68,6 +68,26 @@ const crudController = {
         });
       });
   },
+
+  // handle req-res of delete opration
+  DELETE: (req, res) => {
+    const restaurantId = req.params.id;
+
+    repository
+      .DeleteRestaurant(restaurantId)
+      .then((result) => {
+        res.status(200).json({
+          status: "success",
+          message: "restaurant deleted ☺",
+        });
+      })
+      .catch((err) => {
+        res.status(400).json({
+          status: "fail",
+          message: "something went wrong in delete opration",
+        });
+      });
+  },
 };
 
 module.exports = crudController;

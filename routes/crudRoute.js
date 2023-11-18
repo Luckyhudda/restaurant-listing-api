@@ -12,4 +12,7 @@ router.get("/get-restaurants", crudController.GETAll);
 // update a restaurant details
 router.put("/update-restaurant/:id", crudController.UPDATE);
 
+// delete a restaurant from list
+router.delete("/delete-restaurant/:id", crudController.DELETE);
+
 module.exports = router; 

@@ -26,8 +26,19 @@ const UpdateRestaurant = async (data, id) => {
   );
 };
 
+
+// delete operation
+const DeleteRestaurant = async(id) =>{
+    return Restaurant.destroy({
+        where:{
+            id
+        }
+    })
+}
+
 module.exports = {
   addRestaurant,
   getRestaurants,
   UpdateRestaurant,
+  DeleteRestaurant,
 };
