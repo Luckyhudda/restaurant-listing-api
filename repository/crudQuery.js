@@ -11,7 +11,9 @@ const addRestaurant = async (data) => {
 
 // read operation
 const getRestaurants = async () => {
-  return Restaurant.findAll();
+  return Restaurant.findAll({
+    order: [["createdAt", "DESC"]], 
+  });
 };
 
 // Update operation
