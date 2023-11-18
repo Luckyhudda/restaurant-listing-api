@@ -6,6 +6,13 @@ const addRestaurant = async (data) => {
   return newRestaurant;
 };
 
+
+// read operation
+const getRestaurant = async () =>{
+    return Restaurant.findAll();
+}
+
 module.exports = {
   addRestaurant,
+  getRestaurant,
 };

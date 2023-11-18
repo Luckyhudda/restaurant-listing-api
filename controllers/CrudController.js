@@ -28,6 +28,25 @@ const crudController = {
         });
       });
   },
+
+  // handle req-res of read operation
+  GETAll: (req, res) => {
+    repository
+      .getRestaurant()
+      .then((result) => {
+        res.status(200).json({
+          status: "success",
+          data: result,
+        });
+      })
+      .catch((err) => {
+        console.log("Error fetching restaurant:", err);
+        res.status(500).json({
+          status: "fail",
+          message: " Server error in fetching restaurants.",
+        });
+      });
+  },
 };
 
 module.exports = crudController;
